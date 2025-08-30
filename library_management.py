@@ -23,7 +23,11 @@ class Library:
         print("Book has been added to the book list")
 
     def returnBook(self, book):
-        self.lendDict.pop(book)
+        if book in self.lendDict;
+            self.lendDict.pop(book)
+            print("Book has been returned successfully")
+        else:
+            print("This book was not borrowed from the library")
 
 if __name__ == '__main__':
     manu = Library(['python', 'c++ basics', 'my sqlalchemy', 'web development', 'Algorithms by CLRS'], "Code With Manu")
@@ -34,7 +38,7 @@ if __name__ == '__main__':
         print("2. Lend a Book")
         print("3. Add a Book")
         print("4. Return a Book")
-        user_choice = input()
+        user_choice = int(input("Enter your choice (1-4)"))
         if user_choice not in ['1','2','3','4']:
             print("Please enter a valid option")
             continue
@@ -66,7 +70,8 @@ if __name__ == '__main__':
         while(user_choice2!="c" and user_choice2!="q"):
             user_choice2 = input()
             if user_choice2 == "q":
-                exit()
+                print("Thanks for using the Library system. Goodbye!")
+                break
 
             elif user_choice2 == "c":
                 continue
